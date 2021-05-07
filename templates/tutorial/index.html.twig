@@ -15,8 +15,8 @@
             <span class="navbar-brand mb-0 h1 text-primary btn-outline-dark">Symfony Tutorial App</span>
         </div>
     </nav>
-    <div class="container box p-3 shadow my-5 bg-light">
-        <h3>Check list ({{ task_list|length }})</h3>
+    <div class="container box p-3 shadow my-5 bg-light w-50">
+        <h3>Symfony check list ({{ task_list|length }})</h3>
         <div class="table-responsive">
             <table class="table align-middle">
                 <thead>
@@ -25,15 +25,17 @@
                     <th> </th>
                 </thead>
                 <tbody>
-                <form>
+
                 {% for index,task in task_list %}
                     <tr>
                         <td>{{  index  }}</td>
-                        <td><input type="checkbox" aria-readonly="true" class="form-check-input"></td>
+                        <td>
+                            <input name="chkBox_1" type="checkbox" value="{{ task }}" readonly class="form-check-input">
+                        </td>
                         <td>{{  task  }}</td>
                     </tr>
                 {% endfor %}
-                </form>
+
                 </tbody>
             </table>
         </div>
